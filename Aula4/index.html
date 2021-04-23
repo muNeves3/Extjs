@@ -1,0 +1,43 @@
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="../extjs/resources/css/ext-all.css">
+    <script type="text/javascript" src="../extjs/ext-all.js"></script>
+</head>
+<body></body>
+
+<script type="text/javascript">
+    Ext.onReady(function () {
+        Ext.define("CursoExt4.Aula04.Usuario", {
+            nome: '',
+            senha: '',
+
+            constructor: function(options) {
+                Ext.apply(this, options || {});
+
+                console.log('construtor foi chamado');
+            },
+
+            login: function() {
+                console.log('fazendo login');
+            },
+
+            logout: function() {
+                console.log('fazendo logout');
+            }
+        }, 
+            function() {
+                console.log('callback foi chamado');
+            }
+        );
+
+        var usuario = Ext.create('CursoExt4.Aula04.Usuario', {name: 'Murilo Neves', senha: '123456'});
+
+        // var usuario = new CursoExt4.Aula04.Usuario({   --> NÃO USAR ESSA SINTAXE
+        //     name: 'Murilo Neves',
+        //     senha: '123456'
+        // });
+        console.log(usuario);
+    });
+
+</script>
+</html>
